@@ -64,7 +64,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const connecter = connect(mapStateToProps, mapDispatchToProps);
-TableParking = connecter(TableParking);
-
-export default TableParking;
+export default connect(mapStateToProps, mapDispatchToProps)(TableParking);
