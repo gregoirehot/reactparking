@@ -7,11 +7,12 @@ import './index.css';
 import App from './App';
 
 import { reducer } from './reducers';
+import thunk from 'redux-thunk';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducer, compose(
-    applyMiddleware(logger),
+    applyMiddleware(thunk,logger),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 
