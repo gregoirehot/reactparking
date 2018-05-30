@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { actions } from '../actions';
 
-import Table from '../composants/Table'
+import TableComponent from '../composants/TableComponent'
 
 class TableParking extends Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class TableParking extends Component {
     render() {
         return (
             <div className="App">
-                <Table parkings={this.props.parkings} updateParking={this.updateParking.bind(this)} />
+                <TableComponent parkings={this.props.parkings} updateParking={this.updateParking.bind(this)} />
             </div>
         );
     }
