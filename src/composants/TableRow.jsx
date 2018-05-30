@@ -1,40 +1,25 @@
-import React, { Component } from 'react';
-import TableInput from './TableInput'
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class TableRow extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { parking: props.parking };
-        this.updateConducteur = this.updateConducteur.bind(this);
-    }
-
-
-    updateConducteur(conducteur) {
-
-        if (conducteur) {
-            this.setState({
-                parking: {
-                    ...this.state.parking,
-                    conducteur
-                }
-            })
-        }
-    }
-
-    render() {
-        const { parking } = this.state;
-        return (
-            <tr>
-                <td>{parking.libre ? "Libre" : "Occupé"}</td>
-                <td>{parking.title}</td>
-                <td>{parking.date}</td>
-                <td><TableInput conducteur={parking.conducteur} onChange={this.updateConducteur} /></td>
-                <td>{parking.libre ? "Libre" : "Occupé"}</td>
-            </tr>
-        );
-    }
-}
+const TableRow = (props) => {
+    const { parking, index } = props;
+    return (
+        <tr>
+            <td>{parking.libre ? "Libre" : "Occupé"}</td>
+            <td>{parking.title}</td>
+            <td>{parking.date}</td>
+            <td>
+                {/* <TableInput conducteur={parking.conducteur} onChange={this.updateConducteur} /> */}
+                <div>
+                    <input type="text" value={parking.conducteur}
+                        onChange={(event) => props.updateParking(event, index)} />
+                    <span></span>
+                </div>
+            </td>
+            <td>{parking.libre ? "Libre" : "Occupé"}</td>
+        </tr>
+    );
+};
 
 TableRow.propTypes = {
     parking: PropTypes.shape({

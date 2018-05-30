@@ -5,13 +5,15 @@ import TableInput from './TableInput';
 class TableCell extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.conducteur !== this.props.conducteur) {
-            
+
         }
     }
 
     render() {
         return (
+            <div>test
             <TableInput conducteur={this.props.conducteur} onChange={this.props.onChange} />
+            </div>
         );
     }
 }
