@@ -37,7 +37,7 @@ const TableComponentRow = (props) => {
         <TableRow className={classes.row}>
             <CustomTableCell >{!parking.conducteur ? "Libre" : "Occupé"}</CustomTableCell >
             <CustomTableCell >{parking.title}</CustomTableCell >
-            <CustomTableCell >{parking.date}</CustomTableCell >
+            {/* <CustomTableCell >{parking.date}</CustomTableCell > */}
             <CustomTableCell >
                 {/* <TableInput conducteur={parking.conducteur} onChange={this.updateConducteur} /> */}
                 <div>

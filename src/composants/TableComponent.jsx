@@ -44,7 +44,7 @@ const TableComponent = (props) => {
                     <TableRow>
                         <CustomTableCell>Etat</CustomTableCell>
                         <CustomTableCell>Place #</CustomTableCell>
-                        <CustomTableCell>Date</CustomTableCell>
+                        {/* <CustomTableCell>Date</CustomTableCell> */}
                         <CustomTableCell>Conducteur</CustomTableCell>
                         {/* <CustomTableCell>Changer l'état</CustomTableCell> */}
                     </TableRow>
