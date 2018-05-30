@@ -1,4 +1,5 @@
 import { UPDATE_PARKING, FETCH_PARKINGS_BEGIN, FETCH_PARKINGS_ERROR, FETCH_PARKINGS_SUCCESS } from '../actions';
+import { REHYDRATE } from 'redux-persist';
 
 const initialState = {
     parkings: [
@@ -220,8 +221,13 @@ const initialState = {
     error: null
 }
 
-export const reducer = (state = initialState, action) => {
+export const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+        case REHYDRATE:
+            return {
+                ...state,
+                parkings: action.payload.parkings
+            };
         case FETCH_PARKINGS_BEGIN:
             // Mark the state as "loading" so we can show a spinner or something
             // Also, reset any errors. We're starting fresh.

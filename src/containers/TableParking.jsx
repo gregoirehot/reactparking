@@ -12,7 +12,10 @@ class TableParking extends Component {
     // }
 
     componentDidMount() {
-        this.props.onFetchParkings();
+        let localState = localStorage.getItem('persist:root');
+        if (!localState) {
+            this.props.onFetchParkings();
+        }
     }
 
     updateParking(event, index) {
