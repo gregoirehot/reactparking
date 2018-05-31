@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TableParking from './containers/TableParking'
+import TableParking from './containers/TableParking';
+import ScoreBoard from './containers/ScoreBoard';
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <TableParking />
+        <ScoreBoard />
       </div>
     );
   }
