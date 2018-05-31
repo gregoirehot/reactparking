@@ -48,8 +48,8 @@ class SinglePlayer extends Component {
         //alert('componentDidUpdate => ' + this.props.name);
     }
     componentWillUnmount() {
-        console.log('componentDidUpdate => ' + this.props.name);
-        //alert('componentDidUpdate => ' + this.props.name);
+        console.log('componentWillUnmount => ' + this.props.name);
+        //alert('componentWillUnmount => ' + this.props.name);
     }
 
     render() {
