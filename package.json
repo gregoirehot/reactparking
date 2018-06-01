@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.1.0",
     "deep-freeze": "0.0.1",
+    "es6-promise": "^4.2.4",
     "espect": "^0.1.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

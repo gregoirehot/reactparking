@@ -1,5 +1,4 @@
 import { UPDATE_PARKING, FETCH_PARKINGS_BEGIN, FETCH_PARKINGS_ERROR, FETCH_PARKINGS_SUCCESS } from '../actions';
-import { REHYDRATE } from 'redux-persist';
 
 const initialState = {
     parkings: [
@@ -223,11 +222,6 @@ const initialState = {
 
 export const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case REHYDRATE:
-            return {
-                ...state,
-                parkings: action.payload.parkings
-            };
         case FETCH_PARKINGS_BEGIN:
             // Mark the state as "loading" so we can show a spinner or something
             // Also, reset any errors. We're starting fresh.
@@ -236,16 +230,14 @@ export const rootReducer = (state = initialState, action) => {
                 loading: true,
                 error: null
             };
-
         case FETCH_PARKINGS_SUCCESS:
             // All done: set loading "false".
             // Also, replace the items with the ones from the server
             return {
                 ...state,
                 loading: false,
-                parkings: action.payload.parkings
+                parkings: [...state.parkings]
             };
-
         case FETCH_PARKINGS_ERROR:
             // The request failed, but it did stop, so set loading to "false".
             // Save the error, and we can display it somewhere

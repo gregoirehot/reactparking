@@ -29,7 +29,7 @@ class SinglePlayer extends Component {
     }
     shouldComponentUpdate(nextProps, nextState) {
         // Don't rerender if score doesn't change,
-        if (nextProps.score == this.props.score) {
+        if (nextProps.score === this.props.score) {
             console.log('shouldComponentUpdate => ' + this.props.name + '? false');
             //alert('shouldComponentUpdate => ' + this.props.name + '? false');
             return false;
